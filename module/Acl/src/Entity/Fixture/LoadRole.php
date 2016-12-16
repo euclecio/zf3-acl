@@ -16,7 +16,7 @@ class LoadRole extends AbstractFixture implements OrderedFixtureInterface
         $role->setName("Visitante");
         $manager->persist($role);
 
-        $visitor = $manager->getReference('Acl\Entity\Role', 1);
+        $visitor = $manager->getReference(\Acl\Entity\Role::class, 1);
 
         $role = new Role;
         $role->setName("Administrador")

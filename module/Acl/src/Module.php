@@ -23,13 +23,13 @@ class Module
                 Permissions\Acl::class => function($container) {
                     /* Get ACL from database */
 					$em         = $container->get(\Doctrine\ORM\EntityManager::class);
-					$roles      = $em->getRepository("Acl\Entity\Role")->findAll();
-					$resources  = $em->getRepository("Acl\Entity\Resource")->findAll();
-					$privileges = $em->getRepository("Acl\Entity\Privilege")->findAll();
+					$roles      = $em->getRepository(\Acl\Entity\Role::class)->findAll();
+					$resources  = $em->getRepository(\Acl\Entity\Resource::class)->findAll();
+					$privileges = $em->getRepository(\Acl\Entity\Privilege::class)->findAll();
 
                     return new Permissions\Acl($roles, $resources, $privileges);
                 }
-            )  
+            )
         );
     }
 }

@@ -35,7 +35,7 @@ class Module implements ConfigProviderInterface, ServiceProviderInterface, Contr
 
                 /* Check if user exists, if it has authenticated and set role */
                 if ($authService->hasIdentity()) {
-                    $user = $em->getReference("User\Entity\User", $authService->getIdentity()->getId());
+                    $user = $em->getReference(\User\Entity\User::class, $authService->getIdentity()->getId());
                     if(is_object($user)) {
                         $role = $user->getRole()->getName();
                     } else {

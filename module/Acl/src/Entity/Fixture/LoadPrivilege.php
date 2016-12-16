@@ -10,19 +10,19 @@ use Acl\Entity\Privilege;
 
 class LoadPrivilege extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load(ObjectManager $manager) 
+    public function load(ObjectManager $manager)
     {
-        $visitor   = $manager->getReference('Acl\Entity\Role', 1);
-        $admin     = $manager->getReference('Acl\Entity\Role', 2);
-        $developer = $manager->getReference('Acl\Entity\Role', 3);
+        $visitor   = $manager->getReference(\Acl\Entity\Role::class', 1);
+        $admin     = $manager->getReference(\Acl\Entity\Role::class', 2);
+        $developer = $manager->getReference(\Acl\Entity\Role::class', 3);
 
-        $aclRole      = $manager->getReference('Acl\Entity\Resource', 1);
-        $aclResource  = $manager->getReference('Acl\Entity\Resource', 2);
-        $aclPrivi     = $manager->getReference('Acl\Entity\Resource', 3);
-        $k13          = $manager->getReference('Acl\Entity\Resource', 4);
-        $auth         = $manager->getReference('Acl\Entity\Resource', 5);
-        $userResource = $manager->getReference('Acl\Entity\Resource', 6);
-        $blog         = $manager->getReference('Acl\Entity\Resource', 7);
+        $aclRole      = $manager->getReference(\Acl\Entity\Resource::class, 1);
+        $aclResource  = $manager->getReference(\Acl\Entity\Resource::class, 2);
+        $aclPrivi     = $manager->getReference(\Acl\Entity\Resource::class, 3);
+        $k13          = $manager->getReference(\Acl\Entity\Resource::class, 4);
+        $auth         = $manager->getReference(\Acl\Entity\Resource::class, 5);
+        $userResource = $manager->getReference(\Acl\Entity\Resource::class, 6);
+        $blog         = $manager->getReference(\Acl\Entity\Resource::class, 7);
 
         /* Visitor */
         $privilege = new Privilege;
