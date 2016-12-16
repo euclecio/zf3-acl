@@ -1,0 +1,40 @@
+<h1>Edit Post</h1>
+
+<?php
+
+$title = $form->get('title');
+$title->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+$content = $form->get('content');
+$content->setAttribute('class', 'form-control')
+    ->setLabelAttributes(['class' => 'control-label']);
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('admin-blog/post', ['action' => 'edit', 'id' => $id]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+
+<?php $message = $this->formElementErrors($title, ['class' => 'help-block']); ?>
+<div class="form-group<?= $message ? " has-error" : "" ?>">
+    <?= $this->formLabel($title); ?>
+    <?= $this->formElement($title); ?>
+    <?= $message ?>
+</div>
+
+<?php $message = $this->formElementErrors($content, ['class' => 'help-block']); ?>
+<div class="form-group<?= $message ? " has-error" : "" ?>">
+    <?= $this->formLabel($content); ?>
+    <?= $this->formElement($content); ?>
+    <?= $message ?>
+</div>
+
+<?php
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();
+?>

@@ -1,0 +1,32 @@
+<?php
+/** @var \Blog\Entity\Post $post */
+$this->headTitle("Blog");
+?>
+
+<h1>Blog</h1>
+
+<p>
+    <a href="<?= $this->url('admin-blog/post', ['action' => 'add']); ?>">
+        New Post
+    </a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Action</th>
+    </tr>
+    <?php foreach ($posts as $post): ?>
+        <tr>
+            <td><?= $this->escapeHtml($post->getTitle()); ?></td>
+            <td>
+                <a href="<?=$this->url('admin-blog/post', ['action'=>'edit', 'id'=>$post->getId()] );?>">
+                    Edit
+                </a>
+                <a href="<?=$this->url('admin-blog/post', ['action'=>'delete', 'id'=>$post->getId()] );?>">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

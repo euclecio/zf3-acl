@@ -1,0 +1,41 @@
+<?php
+/** @var \Blog\Entity\Post $post */
+/** @var \Blog\Entity\Comment $comment */
+$this->headTitle("Blog");
+
+
+$content = $commentForm->get('content');
+$content->setAttribute('class', 'form-control');
+
+$submit = $commentForm->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$commentForm->setAttribute('action', $this->url('site-post', ['action' => 'addComment', 'id' => $post->getId()]));
+$commentForm->prepare();
+?>
+
+<div class="row">
+    <div class="thumbnail">
+        <div class="caption">
+            <h2><?= $this->escapeHtml($post->getTitle()); ?></h2>
+            <p><?= $post->getContent(); ?></p>
+        </div>
+    </div>
+    <div class="well well-lg">
+        <h4>Comentários</h4>
+        <?php echo $this->form()->openTag($commentForm); ?>
+        <div class="form-group">
+            <?= $this->formElement($content); ?>
+        </div>
+        <?php
+        echo $this->formSubmit($submit);
+        echo $this->form()->closeTag($commentForm);
+        ?>
+        <br/><br/><br/>
+        <ul>
+            <? foreach ($post->getComments()->toArray() as $comment): ?>
+                <li><?= $comment->getContent() ?></li>
+            <? endforeach; ?>
+        </ul>
+    </div>
+</div>
