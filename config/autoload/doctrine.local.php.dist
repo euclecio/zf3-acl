@@ -12,8 +12,8 @@ return array(
                     'host'     => 'localhost',
                     'port'     => '3306',
                     'user'     => 'root',
-                    'password' => 'k13',
-                    'dbname'   => 'zf3_oab',
+                    'password' => 'root',
+                    'dbname'   => 'database',
                     'driverOptions' => [
                         \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
                     ]
