@@ -12,9 +12,9 @@ class LoadPrivilege extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $visitor   = $manager->getReference(\Acl\Entity\Role::class', 1);
-        $admin     = $manager->getReference(\Acl\Entity\Role::class', 2);
-        $developer = $manager->getReference(\Acl\Entity\Role::class', 3);
+        $visitor   = $manager->getReference(\Acl\Entity\Role::class, 1);
+        $admin     = $manager->getReference(\Acl\Entity\Role::class, 2);
+        $developer = $manager->getReference(\Acl\Entity\Role::class, 3);
 
         $aclRole      = $manager->getReference(\Acl\Entity\Resource::class, 1);
         $aclResource  = $manager->getReference(\Acl\Entity\Resource::class, 2);
