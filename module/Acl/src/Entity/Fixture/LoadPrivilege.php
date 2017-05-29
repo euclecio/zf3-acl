@@ -8,6 +8,9 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 use Acl\Entity\Privilege;
 
+/**
+ * @author Euclécio Josias Rodrigues <eucjosias@gmail.com>
+ */
 class LoadPrivilege extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)

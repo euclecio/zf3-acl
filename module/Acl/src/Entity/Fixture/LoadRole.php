@@ -8,6 +8,9 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 use Acl\Entity\Role;
 
+/**
+ * @author Euclécio Josias Rodrigues <eucjosias@gmail.com>
+ */
 class LoadRole extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)

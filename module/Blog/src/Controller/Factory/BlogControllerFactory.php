@@ -12,7 +12,6 @@ use Interop\Container\ContainerInterface;
 
 class BlogControllerFactory
 {
-
     public function __invoke(ContainerInterface $container)
     {
 
@@ -22,6 +21,4 @@ class BlogControllerFactory
         $postForm = $container->get(PostForm::class);
         return new BlogController($entityManager, $repository, $postForm);
     }
-
-
 }

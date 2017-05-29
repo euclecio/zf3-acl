@@ -8,6 +8,9 @@ use Zend\Permissions\Acl\Role\GenericRole as Role;
 use Zend\Stdlib\Exception\InvalidArgumentException;
 use Zend\Stdlib\Exception\RuntimeException;
 
+/**
+ * @author Euclécio Josias Rodrigues <eucjosias@gmail.com>
+ */
 class Acl extends ZendAcl
 {
     /**
@@ -48,7 +51,7 @@ class Acl extends ZendAcl
     protected function loadRoles()
     {
         foreach($this->roles as $role) {
-            if($role->getParent()) 
+            if($role->getParent())
                 $this->addRole(new Role($role->getName()), new Role($role->getParent()->getName()));
             else
                 $this->addRole(new Role($role->getName()));
@@ -66,7 +69,7 @@ class Acl extends ZendAcl
      */
     protected function loadResources()
     {
-        foreach($this->resources as $resource) 
+        foreach($this->resources as $resource)
             $this->addResource(new Resource($resource->getName()));
 
         return $this;

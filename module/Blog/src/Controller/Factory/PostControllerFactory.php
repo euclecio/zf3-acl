@@ -13,7 +13,6 @@ use Interop\Container\ContainerInterface;
 
 class PostControllerFactory
 {
-
     public function __invoke(ContainerInterface $container)
     {
         /** @var EntityManager $entityManager */
@@ -23,6 +22,4 @@ class PostControllerFactory
         $commentForm = $container->get(CommentForm::class);
         return new PostController($entityManager, $postRepository, $commentRepository, $commentForm);
     }
-
-
 }

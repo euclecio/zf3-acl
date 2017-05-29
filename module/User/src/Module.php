@@ -13,6 +13,9 @@ use Zend\ModuleManager\Feature\ControllerProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\Mvc\MvcEvent;
 
+/**
+ * @author Euclécio Josias Rodrigues <eucjosias@gmail.com>
+ */
 class Module implements ConfigProviderInterface, ServiceProviderInterface, ControllerProviderInterface
 {
     public function onBootstrap(MvcEvent $e)

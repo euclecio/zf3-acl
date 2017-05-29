@@ -5,6 +5,7 @@ namespace Acl;
 /**
  * Class Module
  * @package Acl
+ * @author Euclécio Josias Rodrigues <eucjosias@gmail.com>
  */
 class Module
 {

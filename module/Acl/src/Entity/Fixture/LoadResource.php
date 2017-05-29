@@ -8,9 +8,12 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 
 use Acl\Entity\Resource;
 
+/**
+ * @author Euclécio Josias Rodrigues <eucjosias@gmail.com>
+ */
 class LoadResource extends AbstractFixture implements OrderedFixtureInterface
 {
-    public function load(ObjectManager $manager) 
+    public function load(ObjectManager $manager)
     {
         $resource = new Resource;
         $resource->setName("Acl\Controller\Role");
